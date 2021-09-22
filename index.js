@@ -33,7 +33,7 @@ client.connect(err => {
             })
     })
 
-    app.get('/users/:phone', (req, res) => {
+    app.get('/user/:phone', (req, res) => {
         userCollection.find({ phone: req.params.phone })
             .toArray((err, documents) => {
                 res.send(documents[0]);
