@@ -33,6 +33,13 @@ client.connect(err => {
             })
     })
 
+    app.get('/users/:phone', (req, res) => {
+        userCollection.find({ phone: req.params.phone })
+            .toArray((err, documents) => {
+                res.send(documents[0]);
+            })
+    })
+
     app.get('/', (req, res) => {
         res.send('Hello World!')
     })
