@@ -36,14 +36,6 @@ client.connect(err => {
         res.send('Hello World!')
     })
 
-    app.post('/result', (req, res) => {
-        const newUser = req.body;
-        userCollection.insertOne(newUser)
-            .then(result => {
-                res.send(result.insertedCount > 0)
-            })
-    })
-
 });
 
 
